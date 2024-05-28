@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandwritingCanvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="config-panel">
+            <h2>配置效果参数</h2>
+            <div>
+                <label for="textInput">输入文本：</label>
+                <input type="text" id="textInput" placeholder="输入您想要生成的文本" oninput="updateCanvas()">
+            </div>
+            <div>
+                <label for="fontStyle">字体样式：</label>
+                <select id="fontStyle" onchange="updateCanvas()">
+                    <!-- 字体选项 -->
+                </select>
+            </div>
+            <div>
+                <label for="fontSize">字体大小：</label>
+                <input type="number" id="fontSize" min="10" max="100" step="1" value="16" oninput="updateCanvas()">
+            </div>
+            <div>
+                <label for="fontColor">字体颜色：</label>
+                <input type="color" id="fontColor" value="#000000" onchange="updateCanvas()">
+            </div>
+            <div>
+                <label for="bgImage">背景图片：</label>
+                <select id="bgImage" onchange="updateCanvas()">
+                    <!-- 背景图片选项 -->
+                </select>
+            </div>
+            <button onclick="downloadHandwriting()">下载</button>
+        </div>
+        <div class="preview-panel">
+            <h2>实时预览</h2>
+            <canvas id="canvas" width="800" height="400"></canvas>
+        </div>
+    </div>
+
+    <script src="bundle.js"></script>
+</body>
+</html>
